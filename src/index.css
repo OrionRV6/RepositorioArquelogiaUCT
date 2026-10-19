@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Paleta: blanco y negro + café tierra. Modo oscuro automático. */
+:root {
+  --fondo: #ffffff; --texto: #151311; --tierra: #7b4f2e; --suave: #f5ede4;
+  --tenue: #6d645b; --borde: #e4d9cc; --noche: #151311;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #121110; --texto: #f3ede6; --tierra: #c9935f; --suave: #1e1a17;
+    --tenue: #a89d92; --borde: #342d27; --noche: #1d1916;
+  }
+}
+@theme inline {
+  --color-fondo: var(--fondo); --color-texto: var(--texto); --color-tierra: var(--tierra);
+  --color-suave: var(--suave); --color-tenue: var(--tenue); --color-borde: var(--borde);
+  --color-noche: var(--noche);
+  --font-serif: Fraunces, Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+}
+body { @apply bg-fondo text-texto font-sans antialiased; }
+:focus-visible { outline: 2px solid var(--tierra); outline-offset: 2px; }
